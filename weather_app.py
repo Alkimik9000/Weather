@@ -25,6 +25,7 @@ def get_current_weather(city):
     return data
 
 def get_future_weather(city, future_date):
+    print(f"Fetching future weather for {city} on {future_date}")
     params = {
         'q': city,
         'appid': API_KEY,
@@ -33,7 +34,7 @@ def get_future_weather(city, future_date):
     response = requests.get(FUTURE_WEATHER_URL, params=params)
     data = response.json()
 
-    # Print the entire response for debugging
+    # Print the API response
     print(f"API response: {data}")
 
     # Check if there is an error in the response or if 'list' key is missing
@@ -44,10 +45,13 @@ def get_future_weather(city, future_date):
     # Find the closest match for the future date
     for forecast in data['list']:
         forecast_date = datetime.utcfromtimestamp(forecast['dt']).strftime('%Y-%m-%d')
+        print(f"Checking forecast for {forecast_date}")
         if forecast_date == future_date:
+            print("Matching forecast found!")
             return forecast
 
     # If no matching forecast found, return None
+    print("No matching forecast found.")
     return None
 
 @app.route('/current-weather', methods=['GET'])
