@@ -23,3 +23,4 @@ def test_current_weather_route_no_city(client):
 def test_future_weather_route_no_city(client):
     response = client.get('/future-weather?date=2024-12-25')
     assert response.status_code == 404
+## testing if the CI pipeline works
