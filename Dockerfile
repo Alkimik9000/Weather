@@ -12,7 +12,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Expose the port your Flask app runs on
-EXPOSE 5000
+EXPOSE 5001
 
 # Run the Flask app
 CMD ["python", "weather_app.py"]
