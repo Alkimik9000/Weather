@@ -1,4 +1,4 @@
-name: Docker Image CI/CD
+name: Docker Image CI
 
 on:
   push:
@@ -28,18 +28,3 @@ jobs:
       run: |
         docker build . --file Dockerfile --tag alkimik/weather-app:latest
         docker push alkimik/weather-app:latest
-
-    - name: Set up Kubernetes
-      uses: azure/setup-kubectl@v1
-      with:
-        version: 'latest'
-
-    - name: Set up Helm
-      run: |
-        curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
-
-    - name: Deploy to Kubernetes
-      env:
-        KUBECONFIG: ${{ secrets.KUBECONFIG }}
-      run: |
-        helm upgrade --install weather-app-release ./weather-app-chart --set image.repository=alkimik/weather-app --set image.tag=latest
