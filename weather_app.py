@@ -64,7 +64,7 @@ def current_weather_route():
 
     # Customize the response with specific details
     result = {
-        "city requested is test CD": current_weather["name"],
+        "city requested is test if I must delete pods": current_weather["name"],
         "temperature": current_weather["main"]["temp"],
         "description": current_weather["weather"][0]["description"],
         "wind_speed": current_weather["wind"]["speed"]
