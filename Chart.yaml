@@ -1,12 +1,11 @@
 apiVersion: v2
 name: weather-app-chart
 description: A Helm chart for deploying the weather app
-version: 0.1.0
-appVersion: "1.0"
+version: 0.2.0  # Incremented chart version
+appVersion: "v2.0.1"  # Updated app version to match Docker image tag
 keywords:
   - weather
   - flask
   - python
 sources:
   - https://github.com/alkimik/weather-app
-
