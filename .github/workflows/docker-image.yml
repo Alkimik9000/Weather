@@ -26,5 +26,11 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build . --file Dockerfile --tag alkimik/weather-app:latest
-        docker push alkimik/weather-app:latest
+        # Define the version tag
+        VERSION_TAG=v2.0.0  # Replace with your version
+        docker build . --file Dockerfile --tag alkimik/weather-app:${VERSION_TAG}
+        docker push alkimik/weather-app:${VERSION_TAG}
+
+    - name: Update Kubernetes Deployment
+      run: |
+        kubectl set image deployment/weather-app weather-app=alkimik/weather-app:${VERSION_TAG} --namespace=default
