@@ -64,7 +64,7 @@ def current_weather_route():
 
     # Customize the response with specific details
     result = {
-        "city requested": current_weather["name"],
+        "city requested is": current_weather["name"],
         "temperature": current_weather["main"]["temp"],
         "description": current_weather["weather"][0]["description"],
         "wind_speed": current_weather["wind"]["speed"]
