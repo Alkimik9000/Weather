@@ -6,11 +6,13 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/Alkimik9000/Weather.git'
+    repoURL: 'https://github.com/alkimik9000/weather.git'
     targetRevision: HEAD
     path: './'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true
+      selfHeal: true
