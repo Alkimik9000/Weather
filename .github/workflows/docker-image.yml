@@ -27,7 +27,7 @@ jobs:
     - name: Build and push Docker image
       run: |
         # Define the version tag
-        VERSION_TAG=v2.0.1  # Replace with your version
+        VERSION_TAG=v2.0.2  # Replace with your version
         docker build . --file Dockerfile --tag alkimik/weather-app:${VERSION_TAG}
         docker push alkimik/weather-app:${VERSION_TAG}
 

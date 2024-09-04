@@ -64,7 +64,7 @@ def current_weather_route():
 
     # Customize the response with specific details
     result = {
-        "city is check if it's v.2.0.1": current_weather["name"],
+        "city is check if it's v.2.0.2": current_weather["name"],
         "temperature": current_weather["main"]["temp"],
         "description": current_weather["weather"][0]["description"],
         "wind_speed": current_weather["wind"]["speed"]

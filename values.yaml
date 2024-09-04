@@ -1,4 +1,4 @@
 image:
   repository: alkimik/weather-app
-  tag: v2.0.1
+  tag: v2.0.2
   pullPolicy: Always
